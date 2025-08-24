@@ -1,12 +1,13 @@
 import express from "express";
+import type { Request, Response } from "express";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3020;
 
-app.get("/", (req, res) => {
-  res.send("Test Response: Hello Blog App API");
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World!");
 });
 
 app.listen(PORT, () => {
-  console.log(`Blog App Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
